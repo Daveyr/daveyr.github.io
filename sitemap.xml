@@ -3,6 +3,196 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tag/algorithm/</loc>
+    <lastmod>2020-12-18T16:17:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-12-18T16:17:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/guide/</loc>
+    <lastmod>2020-12-18T16:17:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/latin-hypercube-sampling/</loc>
+    <lastmod>2020-12-18T16:17:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-12-18T16:17:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/r/</loc>
+    <lastmod>2020-12-18T16:17:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-12-18T16:17:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/blog/</loc>
+    <lastmod>2020-10-16T16:32:53+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/organising-projects/</loc>
+    <lastmod>2020-10-16T16:32:53+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/project-management/</loc>
+    <lastmod>2020-10-16T16:32:53+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/location-heatmaps-in-r/</loc>
+    <lastmod>2020-10-09T12:02:29+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/mapping/</loc>
+    <lastmod>2020-10-09T12:02:29+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/reporting-with-rmarkdown/</loc>
+    <lastmod>2020-09-21T21:10:29+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/resilient-systemd/</loc>
+    <lastmod>2020-09-10T10:09:28+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/linux/</loc>
+    <lastmod>2020-09-10T10:09:28+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/python/</loc>
+    <lastmod>2020-09-10T10:09:28+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/fork-the-algorithm/</loc>
+    <lastmod>2020-09-08T14:05:20+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/git/</loc>
+    <lastmod>2020-09-08T15:43:21+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/govt/</loc>
+    <lastmod>2020-09-08T14:05:20+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/heave-ho-git/</loc>
+    <lastmod>2020-09-08T15:43:21+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/arcadis/</loc>
+    <lastmod>2020-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/complexity-analytics/</loc>
+    <lastmod>2020-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/api/</loc>
+    <lastmod>2020-08-17T17:15:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/docker/</loc>
+    <lastmod>2020-08-13T22:02:16+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/how-to-run-r-using-docker-on-raspberry-pi/</loc>
+    <lastmod>2020-08-13T22:02:16+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/how-to-write-api-packages-for-r/</loc>
+    <lastmod>2020-08-17T17:15:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/r-package/</loc>
+    <lastmod>2020-08-17T17:15:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/raspberry-pi/</loc>
+    <lastmod>2020-08-13T22:02:16+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/vehicle-fleet/</loc>
+    <lastmod>2020-08-17T17:15:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/bias-in-algorithms/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/armr/</loc>
+    <lastmod>2020-07-26T23:14:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2020-07-26T23:14:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/chargepointapi/</loc>
+    <lastmod>2020-07-26T23:14:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/dvla/</loc>
+    <lastmod>2020-07-26T23:14:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/electric-vehicles/</loc>
+    <lastmod>2020-07-26T23:14:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/emissions/</loc>
+    <lastmod>2020-07-26T23:14:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/</loc>
+    <lastmod>2020-07-26T23:14:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/richard-davey/</loc>
+    <lastmod>2020-07-26T23:14:11+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2018-06-28T00:00:00+01:00</lastmod>
   </url>
@@ -15,18 +205,6 @@
   <url>
     <loc>/terms/</loc>
     <lastmod>2018-06-28T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
   </url>
   
   <url>
@@ -43,10 +221,6 @@
   
   <url>
     <loc>/author/richard-davey/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
   </url>
   
 </urlset>

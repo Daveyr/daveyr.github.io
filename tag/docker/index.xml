@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker | Algorist</title>
+    <link>/tag/docker/</link>
+      <atom:link href="/tag/docker/index.xml" rel="self" type="application/rss+xml" />
+    <description>Docker</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><lastBuildDate>Mon, 17 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Docker</title>
+      <link>/tag/docker/</link>
+    </image>
+    
+    <item>
+      <title>How to run R using Docker on Raspberry Pi</title>
+      <link>/post/how-to-run-r-using-docker-on-raspberry-pi/</link>
+      <pubDate>Mon, 17 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/post/how-to-run-r-using-docker-on-raspberry-pi/</guid>
+      <description>
+
+
+&lt;p&gt;When I began learning about how to use Docker I stumbled on an excellent project called &lt;a href=&#34;https://www.rocker-project.org/&#34;&gt;Rocker&lt;/a&gt;. For anyone with an x86 machine these Rocker images allow them to run R and most of its dependencies in a containerised environment. Plumber APIs, anyone? What about your own Shiny server? Finally, data scientists using R can have the same level of control on dependencies and package versions as Python users have become accustomed to through &lt;code&gt;venv&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Things are a little more complicated for ARM users, especially 32-bit ARM architectures such as the Raspberry Pi. No Rocker images offer such compatibility so we’re on our own. This was the major reason I’ve started a project, called, &lt;a href=&#34;https://www.algorist.co.uk/project/armr/&#34;&gt;ARMR&lt;/a&gt;, to build a series of Docker images that &lt;strong&gt;do&lt;/strong&gt; offer compatibility with the lovable credit card sized computer.&lt;/p&gt;
+&lt;div id=&#34;hello-world&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Hello woRld&lt;/h1&gt;
+&lt;p&gt;Whilst not much has happened with the project so far, at least I have a version of “Hello woRld”: a container with r-base installed. But first we must install Docker.&lt;/p&gt;
+&lt;div id=&#34;installation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;p&gt;From the terminal on a Raspberry Pi, run the following.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Downloads installation shell script and pipes it into the sh command
+curl -sSL https://get.docker.com | sh
+# Adds pi to the docker group so the user can run
+sudo usermod -aG docker pi&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;From here we can either reboot or run &lt;code&gt;systemctl start docker.service&lt;/code&gt; to start up Docker. To test it is working, try &lt;code&gt;docker info&lt;/code&gt;, then &lt;code&gt;docker version&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Once you know that Docker is running, let’s try a few things in order of sophistication. &lt;code&gt;docker run hello-world&lt;/code&gt; will run a container based on an image called &lt;em&gt;hello-world&lt;/em&gt;. &lt;code&gt;docker run -it ubuntu bash&lt;/code&gt; takes it up a notch: now we have an ubuntu bash container running in interactive mode in the terminal.&lt;/p&gt;
+&lt;p&gt;To make it even more useful, we ought to have access to persistent storage. Let’s modify the command to include a mount volume.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker run -it -v /home:/home ubuntu bash&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;-v&lt;/code&gt; flag tells Docker to attach a volume; the following argument contains the information on what locations should be used, of the form &lt;em&gt;from_volume:to_volume&lt;/em&gt;. The location on your machine is the &lt;em&gt;from_volume&lt;/em&gt; and the location on your container is the &lt;em&gt;to_volume&lt;/em&gt;. In our example, anything you create in the home folder within the container will persist in the home folder of your Raspberry Pi after you close the container. The easiest way to test this is to type &lt;code&gt;touch myfile&lt;/code&gt; in the interactive terminal in the container, and watch the same file appear in your home folder.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;build-an-r-container&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Build an R container&lt;/h2&gt;
+&lt;p&gt;Building a base R container is as simple as writing the code below to a file called &lt;code&gt;Dockerfile&lt;/code&gt;. We use an arm32 ubuntu image as a base, from which we set an environment variable to force the terminal to be non-interactive. This is because when r-base is installed it waits for user input when setting parameters, hanging the container build. By setting the installation to be non-interactive we accept all the defaults, including timezone. Be mindful of this when handling datetimes!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;FROM arm32v7/ubuntu
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update &amp;amp;&amp;amp; apt install r-base -y&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once the Dockerfile is created you run it by typing &lt;code&gt;docker build -t armr&lt;/code&gt; in the same folder in the terminal. Docker then builds an image with the tag &lt;em&gt;armr&lt;/em&gt;. It builds by starting with the base image, setting the environment variable and adding a layer that comprises the result from the &lt;code&gt;RUN&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;In fact, you can see all the layers that are built into any image by running &lt;code&gt;docker history &amp;lt;image_name&amp;gt;&lt;/code&gt; in the terminal.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;whats-next&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;What’s next?&lt;/h1&gt;
+&lt;p&gt;Base R is fine but to be useful we need to add a lot more packages and supporting software. Future development is likely to encompass the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Shiny server (I’d like to host one on this site)&lt;/li&gt;
+&lt;li&gt;Plumber API server&lt;/li&gt;
+&lt;li&gt;Rstudio server (so I can do analysis from anywhere on anything, even a tablet)&lt;/li&gt;
+&lt;li&gt;Images for commonly used packages (Tidyverse, data.table, caret, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>armr</title>
+      <link>/project/armr/</link>
+      <pubDate>Sun, 26 Jul 2020 23:14:11 +0100</pubDate>
+      <guid>/project/armr/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

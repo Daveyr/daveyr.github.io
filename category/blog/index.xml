@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog | Algorist</title>
+    <link>/category/blog/</link>
+      <atom:link href="/category/blog/index.xml" rel="self" type="application/rss+xml" />
+    <description>Blog</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Blog</title>
+      <link>/category/blog/</link>
+    </image>
+    
+    <item>
+      <title>Organising an analytical project</title>
+      <link>/post/organising-projects/</link>
+      <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/organising-projects/</guid>
+      <description>
+
+
+&lt;p&gt;I almost didn’t write this post because the topic of file organisation is incredibly boring for most people. What did drive me to write was a few horrendous project collaborations where the end result was a soup of files where much time was wasted deciphering what file was in use and where it came from. Especially for long-running projects with multiple authors, what generally results is what previous geologist coworkers called “stratigraphic filing”: a time-based layering of work, within files, across versions and across a folder structure that seemed a good idea at the time.&lt;/p&gt;
+&lt;p&gt;We’ve probably all come across similar problems. What is the alternative? The core aim is reproducibility; the second aim is legibility, which follows the first. Together they achieve accountability. The third aim is generality, and by this I mean that if you are following a function and package based philosophy &lt;em&gt;and&lt;/em&gt; you follow separation of confidential data from code then it should be relatively easy to reuse the IP generated from one project into another. There may even be opportunities to make a product from a bespoke client consultation, yielding even more value.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;separate raw data from processed data. Even file conversions count as processed!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;separate code from data from opinion (which includes reporting, charts and model results)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;root /
+------ R / # for code
+------ raw-data / # for data from the client
+------ processed-data / # for the outputs from data cleaning scripts
+------ models /
+--------------- inputs / # the inputs to modelling
+--------------- outputs / # the outputs from modelling
+------ dashboards / # any dashboard or visualisation or summary files (non scripts)&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fork the algorithm</title>
+      <link>/post/fork-the-algorithm/</link>
+      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/fork-the-algorithm/</guid>
+      <description>
+
+
+&lt;p&gt;Watching scenes like these makes me feel like I’m already living in a dystopian future.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;This is amazing. The future is here.&lt;br&gt;&lt;br&gt;‘Fuck the algorithm’&lt;br&gt; &lt;a href=&#34;https://t.co/k4Vny0L4tF&#34;&gt;pic.twitter.com/k4Vny0L4tF&lt;/a&gt;&lt;/p&gt;&amp;mdash; Carole Cadwalladr (@carolecadwalla) &lt;a href=&#34;https://twitter.com/carolecadwalla/status/1295277889412304897?ref_src=twsrc%5Etfw&#34;&gt;August 17, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;The protests are of course in response to the UK Education Secretary Gavin Williamson’s decision to use an algorithm to determine A-level and GCSE grades for students this year.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Heave Ho! The cadence of Git</title>
+      <link>/post/heave-ho-git/</link>
+      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/heave-ho-git/</guid>
+      <description>
+
+
+&lt;p&gt;I’ve been working with git for quite a while now. I’ve been &lt;em&gt;happily&lt;/em&gt; working with git for almost as long. After some in-person training and referring to &lt;a href=&#34;https://happygitwithr.com/&#34;&gt;Happy Git for R&lt;/a&gt;, things finally clicked when I found a rhythm to all these strange commands. The git flow I found has helped me not only with what git command I want to use (is it a push? is it a merge?), but also when and in what order to do so.&lt;/p&gt;
+&lt;div id=&#34;heave-hopush-pull&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Heave-Ho/Push-Pull&lt;/h2&gt;
+&lt;p&gt;After a while you notice a diurnal pattern. In the morning,&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git fetch origin
+pull origin master&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;which fetches updates to all branches and pulls work on the master branch from the remote server that may have been added by others after you’ve logged off.&lt;/p&gt;
+&lt;p&gt;At the end of the working day,&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;push origin mybranch&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;submits your changes back to the remote repository so others can pull in the morning. Simple!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;every-bug-or-feature-is-an-issue&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Every bug or feature is an issue&lt;/h2&gt;
+&lt;p&gt;That branch you called &lt;code&gt;mybranch&lt;/code&gt; has accumulated so many extra bits of code and analysis that you’ve entered the death-batch spiral of doing more and postponing the release of a workable product. To combat this, I’ve found that raising an issue and then creating a branch from the issue is the best way of avoiding the death-batch spiral (e.g., “#12-add-random-forest-model”). Gitlab does this out of the box but Github can be coerced to do so by linking pull requests.&lt;/p&gt;
+&lt;p&gt;Ever found yourself on the master branch editing work? Best practice is to protect this branch so it is always a working copy of your program or project. Making every bug or feature an issue and a branch largely avoids the problem but I still find myself doing it from time to time. When it does I do the following (try and avoid committing!)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git checkout -b mynewbranch&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will create a branch and checkout the branch, complete with edited work not yet committed.&lt;/p&gt;
+&lt;p&gt;To summarise:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Every discrete bug or feature is an issue&lt;/li&gt;
+&lt;li&gt;Every issue should be a new branch with a merge/pull request&lt;/li&gt;
+&lt;li&gt;Fix only the issue on the issue branch!&lt;/li&gt;
+&lt;li&gt;Merge the branch when done, closing the issue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-logical-consequence-of-git-d.r.y&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The logical consequence of git + D.R.Y&lt;/h2&gt;
+&lt;p&gt;So I embraced version control in my projects and developed each feature in its own branch. I was also aware of the programmer’s mantra, &lt;em&gt;don’t repeat yourself&lt;/em&gt;. From my experience, git changes the way you think - and not just eschewing files called &lt;code&gt;analysis_final_edit_version2&lt;/code&gt;. It has had knock-on affects to my general work flow.&lt;/p&gt;
+&lt;div id=&#34;make-functions-where-possible&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Make functions where possible&lt;/h3&gt;
+&lt;p&gt;Extending an analysis through the use of issues has now conditioned me to isolate functionality within my consultancy projects (my personal ones too). Using &lt;code&gt;git diff&lt;/code&gt; or comparing changes for pull requests is not fun when the changes are sprawled out across many lines of one file or over different files. The answer to all these questions and more is to solve them through the use of functions. A delayed benefit from this approach is that you can reuse this function when a similar situation presents itself.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;make-a-package-from-your-projects&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Make a package from your projects&lt;/h3&gt;
+&lt;p&gt;What’s better than a set of functions that you can reuse? A fully featured R package or Python module of course. Writing a documented package in R is fairly straightforward by following Hadley Wickham’s book called &lt;a href=&#34;https://r-pkgs.org/&#34;&gt;R Packages&lt;/a&gt;. You can even make a website using the &lt;a href=&#34;https://pkgdown.r-lib.org/&#34;&gt;pkgdown&lt;/a&gt; library. With a small amount of diligence you’ll have a suite of documented functions that will make the next similar project exponentially shorter to complete.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;dont-repeat-ourselves&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Don’t Repeat Ourselves&lt;/h3&gt;
+&lt;p&gt;Did I mention &lt;em&gt;don’t repeat yourself&lt;/em&gt;? Even if each of us is diligently conforming to D.R.Y, we will still be repeating &lt;em&gt;ourselves&lt;/em&gt; because we’re working in isolation. The answer is to collaborate, preferably with an open source license attached. And git (typically using a service like Github or Gitlab) is the framework to do it in.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;concluding-remarks&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Concluding remarks&lt;/h2&gt;
+&lt;p&gt;I’ve found that not only is git a good version control and collaboration framework, but it’s also a discipline that creeps through into many other parts of my work. Starting small with a daily git cadence will grow quickly into a new way of working. It might even end up in open source package development.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Making the complex uncomplicated</title>
+      <link>/post/complexity-analytics/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/post/complexity-analytics/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;em&gt;This post is a draft of an article I wrote on the &lt;a href=&#34;https://www.arcadisgen.com/en/what-we-do/insights/blog/taking-away-the-complexity&#34;&gt;arcadisgen.com&lt;/a&gt; website…&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Utilities companies such as water, electricity and gas networks operate in complex environments. In my time with Arcadis Gen I’ve seen diverse reactions from clients in the face of such complexity:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I don’t have enough data to begin to analyse my system&lt;/li&gt;
+&lt;li&gt;I’m drinking from a fire hydrant! It’s not possible to keep pace with my newly acquired data&lt;/li&gt;
+&lt;li&gt;It’s too difficult to make data driven decisions as it is all too complicated&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I will refer to this as the three stages of data grief. In the face of complexity, companies often demand a highly sophisticated model. However, most companies generally can’t match this with the quantity and quality of data it requires. This explains the first common reaction: “I don’t have enough data”. When authorisation is given to collect more data, the next reaction happens: “I can’t keep pace with my data”. Finally, when an organisation devotes time to organising its warehouse of data then the final reaction occurs: “it’s too difficult to make sense of my data”.&lt;/p&gt;
+&lt;p&gt;I have a hunch that some of the issues experienced are because many people conflate complexity with being complicated. Complexity needn’t be complicated; they are not the same thing. Complex is a description of the system in which a company operates. It is something that you generally cannot control. Complicated is a description of the analytical &lt;em&gt;approach&lt;/em&gt; that a company might take. How complicated your analysis might be is very much something that you can control.&lt;/p&gt;
+&lt;p&gt;But surely you need a complicated model to understand a complex system? It turns out that this is frequently not true. Ironically, understanding a complex system can become easier when interpreting a simple model. At Arcadis Gen we’re very aware of the trade-offs that have to be made when modelling. At one extreme it is possible to build a complicated and precise model, but one that makes inaccurate predictions because it does not generalise in the real world. At the other extreme is a simple model that is easily understood and can make accurate predictions, but lacks the precision to be useful. The first model might predict your asset effective age to be 1000.1338273 years old (precisely wrong); the second might predict it to be between 0 and 80 years (accurate but imprecise). The sweet spot lies somewhere inbetween, where a model is understandable and defendable yet yields insights into the dominant causal relationships at work.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/trade-off.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Let’s look at some real world examples to illustrate. To tackle the first stage of data grief (not enough data), we often work with companies to draw out information from their subject matter experts. For instance, we’ve built a web app that can construct Weibull deterioration curves for infrastructure assets based solely on a questionnaire. For road fleet modelling we have used open data from the UK Driver Vehicle Licensing Authority to augment information on individual vehicles. We’ve also used new car registration data from the Vehicle Certification Agency to build predictive models to infill missing values based on trends.&lt;/p&gt;
+&lt;p&gt;To tackle the second stage (too much data), Arcadis Gen frequently works with clients to make the business problem as simple as possible, but no simpler. When we worked with an electricity generator to optimise the maintenance of auxillary plant, we had enough data to model which year to replace and refurbish each and every asset. If we had done this there would have been the temptation to try and model all the things that made each asset unique (like asset condition monitoring data, work orders, etc.). However, it was more appropriate to find the optimum replacement and refurbishment schedule frequency to apply to whole asset classes, as this was more defendable and explainable to asset managers. After all, the purpose of the model was to pursuade these stakeholders to take action from the results.&lt;/p&gt;
+&lt;p&gt;Sometimes problems refuse to be simplified, which leads to the final stage of data grief (too complicated). Even if you can’t easily simplify the analysis, it is essential to simplify the visualisation and reporting. For a UK water company, we developed a real time water supply and demand tool (called WISDM-O) that takes SCADA data from pumping stations and predicts future demand and stored water volumes. A freshwater distribution network is a complex system that couldn’t be reduced to a simple model. However, the smartest part of this approach was actually the simplest: a set of high level dashboards with all the key metrics needed for senior management to make decisions.&lt;/p&gt;
+&lt;p&gt;Whatever data grief you are experiencing, we’re happy to help make the complex uncomplicated.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git | Algorist</title>
+    <link>/tag/git/</link>
+      <atom:link href="/tag/git/index.xml" rel="self" type="application/rss+xml" />
+    <description>Git</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><lastBuildDate>Tue, 08 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Git</title>
+      <link>/tag/git/</link>
+    </image>
+    
+    <item>
+      <title>Heave Ho! The cadence of Git</title>
+      <link>/post/heave-ho-git/</link>
+      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/heave-ho-git/</guid>
+      <description>
+
+
+&lt;p&gt;I’ve been working with git for quite a while now. I’ve been &lt;em&gt;happily&lt;/em&gt; working with git for almost as long. After some in-person training and referring to &lt;a href=&#34;https://happygitwithr.com/&#34;&gt;Happy Git for R&lt;/a&gt;, things finally clicked when I found a rhythm to all these strange commands. The git flow I found has helped me not only with what git command I want to use (is it a push? is it a merge?), but also when and in what order to do so.&lt;/p&gt;
+&lt;div id=&#34;heave-hopush-pull&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Heave-Ho/Push-Pull&lt;/h2&gt;
+&lt;p&gt;After a while you notice a diurnal pattern. In the morning,&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git fetch origin
+pull origin master&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;which fetches updates to all branches and pulls work on the master branch from the remote server that may have been added by others after you’ve logged off.&lt;/p&gt;
+&lt;p&gt;At the end of the working day,&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;push origin mybranch&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;submits your changes back to the remote repository so others can pull in the morning. Simple!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;every-bug-or-feature-is-an-issue&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Every bug or feature is an issue&lt;/h2&gt;
+&lt;p&gt;That branch you called &lt;code&gt;mybranch&lt;/code&gt; has accumulated so many extra bits of code and analysis that you’ve entered the death-batch spiral of doing more and postponing the release of a workable product. To combat this, I’ve found that raising an issue and then creating a branch from the issue is the best way of avoiding the death-batch spiral (e.g., “#12-add-random-forest-model”). Gitlab does this out of the box but Github can be coerced to do so by linking pull requests.&lt;/p&gt;
+&lt;p&gt;Ever found yourself on the master branch editing work? Best practice is to protect this branch so it is always a working copy of your program or project. Making every bug or feature an issue and a branch largely avoids the problem but I still find myself doing it from time to time. When it does I do the following (try and avoid committing!)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git checkout -b mynewbranch&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will create a branch and checkout the branch, complete with edited work not yet committed.&lt;/p&gt;
+&lt;p&gt;To summarise:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Every discrete bug or feature is an issue&lt;/li&gt;
+&lt;li&gt;Every issue should be a new branch with a merge/pull request&lt;/li&gt;
+&lt;li&gt;Fix only the issue on the issue branch!&lt;/li&gt;
+&lt;li&gt;Merge the branch when done, closing the issue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-logical-consequence-of-git-d.r.y&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The logical consequence of git + D.R.Y&lt;/h2&gt;
+&lt;p&gt;So I embraced version control in my projects and developed each feature in its own branch. I was also aware of the programmer’s mantra, &lt;em&gt;don’t repeat yourself&lt;/em&gt;. From my experience, git changes the way you think - and not just eschewing files called &lt;code&gt;analysis_final_edit_version2&lt;/code&gt;. It has had knock-on affects to my general work flow.&lt;/p&gt;
+&lt;div id=&#34;make-functions-where-possible&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Make functions where possible&lt;/h3&gt;
+&lt;p&gt;Extending an analysis through the use of issues has now conditioned me to isolate functionality within my consultancy projects (my personal ones too). Using &lt;code&gt;git diff&lt;/code&gt; or comparing changes for pull requests is not fun when the changes are sprawled out across many lines of one file or over different files. The answer to all these questions and more is to solve them through the use of functions. A delayed benefit from this approach is that you can reuse this function when a similar situation presents itself.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;make-a-package-from-your-projects&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Make a package from your projects&lt;/h3&gt;
+&lt;p&gt;What’s better than a set of functions that you can reuse? A fully featured R package or Python module of course. Writing a documented package in R is fairly straightforward by following Hadley Wickham’s book called &lt;a href=&#34;https://r-pkgs.org/&#34;&gt;R Packages&lt;/a&gt;. You can even make a website using the &lt;a href=&#34;https://pkgdown.r-lib.org/&#34;&gt;pkgdown&lt;/a&gt; library. With a small amount of diligence you’ll have a suite of documented functions that will make the next similar project exponentially shorter to complete.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;dont-repeat-ourselves&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Don’t Repeat Ourselves&lt;/h3&gt;
+&lt;p&gt;Did I mention &lt;em&gt;don’t repeat yourself&lt;/em&gt;? Even if each of us is diligently conforming to D.R.Y, we will still be repeating &lt;em&gt;ourselves&lt;/em&gt; because we’re working in isolation. The answer is to collaborate, preferably with an open source license attached. And git (typically using a service like Github or Gitlab) is the framework to do it in.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;concluding-remarks&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Concluding remarks&lt;/h2&gt;
+&lt;p&gt;I’ve found that not only is git a good version control and collaboration framework, but it’s also a discipline that creeps through into many other parts of my work. Starting small with a daily git cadence will grow quickly into a new way of working. It might even end up in open source package development.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

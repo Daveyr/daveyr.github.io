@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python | Algorist</title>
+    <link>/tag/python/</link>
+      <atom:link href="/tag/python/index.xml" rel="self" type="application/rss+xml" />
+    <description>Python</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Python</title>
+      <link>/tag/python/</link>
+    </image>
+    
+    <item>
+      <title>Configuring resilient programs with systemd</title>
+      <link>/post/resilient-systemd/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/resilient-systemd/</guid>
+      <description>
+
+
+&lt;p&gt;Ever since a week before lockdown in mid-March, I’ve been holed up in my conservatory working from home. The wild swings in temperature have provided ample motivation to build a temperature probe and live dashboard to track patterns, open windows in good time or cope with the lead time that my pitiful electric heater requires.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;../../img/temp_probe.JPG&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;&lt;em&gt;(Probably needs an enclosure)&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;I will post a full write up of the hardware and software in due course, but in summary it involves a Raspberry Pi zero with a 1-wire temperature device, a Python script, SQLite database, Adafruit IO API for the dashboard and DarkSky API for local weather. To enable the script on boot I ran &lt;code&gt;crontab -e&lt;/code&gt; to edit cron, with the following line to enable the Python script to run on boot.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;@reboot sleep 30 &amp;amp;&amp;amp; /usr/bin/python3 /home/pi/python/temperature_dashboard/temp_dashboard.py &amp;amp;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;At the same time I began reading Antifragile by Nassim Taleb and I was seeing the fragility of systems everywhere. It was through this lens I saw my script kept crashing for some reason: it was a fragile process. How could I make it more resilient, if not antifragile?&lt;/p&gt;
+&lt;p&gt;With some testing I found that the weak point in the service was the connection to the two web APIs. Since I poll them once every two minutes, if one refused to connect at any point the whole script would halt. So I added in &lt;code&gt;try:&lt;/code&gt; and &lt;code&gt;except:&lt;/code&gt; handling of connection errors into functions used to get local weather or post current temperature data. Example below:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# Make sending IO feeds into a function with error handling
+def send_all():
+   global status
+   try:
+       aio.send(reg_temp_feed.key, read_temp())
+       aio.send(current_temp_feed.key, read_temp())
+       aio.send(current_weather_feed.key, weather[&amp;#39;temperature&amp;#39;])
+       aio.send(max_temp_feed.key, max_temp)
+       aio.send(min_temp_feed.key, min_temp)
+       aio.send(status_feed.key, status)
+       status = 1
+       print(&amp;quot;Adafruit connection OK&amp;quot;)
+   except:
+       print(&amp;quot;Adafruit connection down&amp;quot;)
+       sleep(10)
+       status = 0
+       return&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now the temperature dashboard is much more resilient, but for some reason it still crashes now and again. That’s when I stumbled on a great article called “Run your Raspberry Pi code automatically” from issue 34 of &lt;a href=&#34;https://hackspace.raspberrypi.org/issues/34&#34;&gt;Hackspace magazine&lt;/a&gt;. I dispensed with cron and began working with systemd.&lt;/p&gt;
+&lt;div id=&#34;systemd&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Systemd&lt;/h2&gt;
+&lt;p&gt;Cron is a simple scheduler, no more no less. The benefit of systemd over cron is that once you start a service, systemd will monitor it and will attempt to restart the service if it crashes for some reason. Obviously, this not an excuse to write shoddy code, but it represents an extra line of defence for any program where uptime mustn’t be compromised (live dashboards, for instance).&lt;/p&gt;
+&lt;p&gt;With either cron or systemd the python program must have &lt;code&gt;#!/usr/bin/python3&lt;/code&gt; at the top and be executable.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;chmod a+x /home/pi/python/temperature_dashboard/temp_dashboard.py&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In order to create a service that systemd can run you need to create a service file. Mine is below, saved to a file called temperature.service.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;[Unit]
+Description=Launcher service for a temperature dashboard
+After=systemd-user-sessions.service
+
+[Service]
+Type=simple
+ExecStart=/home/pi/python/temperature_dashboard/temp_dashboard.py
+
+[Install]
+WantedBy=multi-user.target&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next you need to copy to the correct folder.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo cp /home/pi/python/temperature_dashboard/temperature.service /etc/systemd/system&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Done! Almost.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;start-stop-run-on-boot&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Start, stop, run on boot&lt;/h2&gt;
+&lt;p&gt;You can start the service with &lt;code&gt;sudo systemctl start temperature.service&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can also see its status with &lt;code&gt;systemctl status temperature.service&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/systemctl_status.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;And stop it with &lt;code&gt;systemctl stop temperature.service&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;However, what I really want is to launch the service every time the computer boots up. To do this I run.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl enable temperature.service&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The corollary is to type the following to stop the service from starting automatically at boot.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl disable temperature.service&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;resilient-code&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Resilient code&lt;/h2&gt;
+&lt;p&gt;The final result is a python program with error handling, launched as a service that systemd will attempt to relaunch if it crashes. With two lines of defence against connection errors (or any other error), my dashboard should have considerably more uptime. Now to begin work on an IoT controller for the heater before winter…&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

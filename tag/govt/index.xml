@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Govt | Algorist</title>
+    <link>/tag/govt/</link>
+      <atom:link href="/tag/govt/index.xml" rel="self" type="application/rss+xml" />
+    <description>Govt</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-gb</language><lastBuildDate>Tue, 08 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Govt</title>
+      <link>/tag/govt/</link>
+    </image>
+    
+    <item>
+      <title>Fork the algorithm</title>
+      <link>/post/fork-the-algorithm/</link>
+      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/fork-the-algorithm/</guid>
+      <description>
+
+
+&lt;p&gt;Watching scenes like these makes me feel like I’m already living in a dystopian future.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;This is amazing. The future is here.&lt;br&gt;&lt;br&gt;‘Fuck the algorithm’&lt;br&gt; &lt;a href=&#34;https://t.co/k4Vny0L4tF&#34;&gt;pic.twitter.com/k4Vny0L4tF&lt;/a&gt;&lt;/p&gt;&amp;mdash; Carole Cadwalladr (@carolecadwalla) &lt;a href=&#34;https://twitter.com/carolecadwalla/status/1295277889412304897?ref_src=twsrc%5Etfw&#34;&gt;August 17, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;The protests are of course in response to the UK Education Secretary Gavin Williamson’s decision to use an algorithm to determine A-level and GCSE grades for students this year.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to write API packages for R</title>
+      <link>/post/how-to-write-api-packages-for-r/</link>
+      <pubDate>Mon, 17 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/post/how-to-write-api-packages-for-r/</guid>
+      <description>
+
+
+&lt;div id=&#34;overview&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Overview&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div id=&#34;installation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Installation&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;DVLA&lt;/code&gt; is not yet on CRAN. To install, simply run the following in R.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;daveyr/DVLA&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;usage&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Usage&lt;/h1&gt;
+&lt;p&gt;Documentation on functions and examples can be found on its &lt;a href=&#34;https://daveyr.github.io/DVLA/&#34;&gt;Github page&lt;/a&gt;. Here’s a more involved example, where we loop through a vector of car registration numbers.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# DVLA API in action
+# 
+# library(DVLA)
+#  i &amp;lt;- 1
+#  dvla &amp;lt;- NULL
+#  for(reg in unique(fleet$reg)){
+#    df &amp;lt;- getDVLA(key, reg)
+#    dvla &amp;lt;- rbindlist(list(dvla,df), fill = T)
+#    i &amp;lt;- i + 1
+#    Sys.sleep(0.2) # avoid rate limits
+#  }
+#  
+#  complete &amp;lt;- fleet %&amp;gt;%
+#   left_join(dvla, by = c(&amp;quot;reg&amp;quot; = &amp;quot;registrationNumber&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;backend&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Backend&lt;/h1&gt;
+&lt;p&gt;So what is happening behind the scenes? How would one go about replicating this type of package for another API?&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bias in algorithms</title>
+      <link>/post/bias-in-algorithms/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/post/bias-in-algorithms/</guid>
+      <description>
+
+
+&lt;p&gt;Last week a colleague of mine shared the news that the UK Home Office has agreed to scrap its controversial ‘visa-streaming’ immigration algorithm after a successful legal challenge.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;🚨Breaking news🚨&lt;br&gt;&lt;br&gt;We&amp;#39;ve got the Home Office to stop using its racist algorithm to sift visa applications!&lt;br&gt;&lt;br&gt;The algorithm gave “speedy boarding” to white people – the Home Office has been forced to scrap it after we &amp;amp; &lt;a href=&#34;https://twitter.com/Foxglovelegal?ref_src=twsrc%5Etfw&#34;&gt;@foxglovelegal&lt;/a&gt; launched legal action &lt;a href=&#34;https://t.co/qKSr6gEkGQ&#34;&gt;https://t.co/qKSr6gEkGQ&lt;/a&gt;&lt;/p&gt;&amp;mdash; JCWI (@JCWI_UK) &lt;a href=&#34;https://twitter.com/JCWI_UK/status/1290561862807953412?ref_src=twsrc%5Etfw&#34;&gt;August 4, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;So what did it do? Essentially it classified applications according to a traffic light system. “Green light” applicants were fast-tracked through visa applications and “Red light” applicants were held to an increased level of scrutiny. Once assigned by the algorithm, the classification played a major role in the outcome of the visa application.&lt;/p&gt;
+&lt;p&gt;So why the legal challenge? Surely a supervised classification algorithm with a low error rate when compared with historic decisions and human-assessed outcomes for the same application is a good thing? Not when an algorithm perpetuates institutional bias and sets up a toxic feedback loop of reinforced prejudice.&lt;/p&gt;
+&lt;p&gt;In practice this meant that the traffic light system was highly correlated to whether an applicant was from a “suspect” country. Applications from these countries received more scrutiny, experienced more delay, and were more likely to be declined. The algorithm “learned” from decisions such as these, reinforcing the strength of this feature in future predictions.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“The Home Office’s own independent review of the Windrush scandal, found that it was oblivious to the racist assumptions and systems it operates. This streaming tool took decades of institutionally racist practices, such as targeting particular nationalities for immigration raids, and turned them into software. The immigration system needs to be rebuilt from the ground up to monitor for such bias and to root it out.” Chai Patel, Legal Policy Director of JCWI&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Whilst the upheld legal challenge is good news, it is a chilling reminder of the new challenges in the data era. Or is it an old challenge reframed? With all these new machine learning tools we simply have the ability to do what we always did but at scale, much more efficiently and much quicker. Sounds like all our private and public institutions could do with an algorithm audit.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
