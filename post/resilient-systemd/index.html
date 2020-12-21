@@ -34,10 +34,10 @@
   
     
   
-  <meta name="description" content="Analytical Consultant">
+  <meta name="description" content="Ever since a week before lockdown in mid-March, I’ve been holed up in my conservatory working from home. The wild swings in temperature have provided ample motivation to build a temperature probe and live dashboard to track patterns, open windows in good time or cope with the lead time that my pitiful electric heater requires.">
 
   
-  <link rel="alternate" hreflang="en-gb" href="/post/">
+  <link rel="alternate" hreflang="en-gb" href="/post/resilient-systemd/">
 
   
 
@@ -253,14 +253,12 @@
   
 
   
-  <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="Algorist">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/post/">
+  <link rel="canonical" href="/post/resilient-systemd/">
 
   
   
@@ -276,17 +274,65 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Algorist">
-  <meta property="og:url" content="/post/">
-  <meta property="og:title" content="Posts | Algorist">
-  <meta property="og:description" content="Analytical Consultant"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="/post/resilient-systemd/">
+  <meta property="og:title" content="Configuring resilient programs with systemd | Algorist">
+  <meta property="og:description" content="Ever since a week before lockdown in mid-March, I’ve been holed up in my conservatory working from home. The wild swings in temperature have provided ample motivation to build a temperature probe and live dashboard to track patterns, open windows in good time or cope with the lead time that my pitiful electric heater requires."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-gb">
   
-    <meta property="og:updated_time" content="2020-12-18T00:00:00&#43;00:00">
+    
+      <meta property="article:published_time" content="2020-09-14T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-09-10T10:09:28&#43;01:00">
   
 
   
 
 
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/resilient-systemd/"
+  },
+  "headline": "Configuring resilient programs with systemd",
+  
+  "datePublished": "2020-09-14T00:00:00Z",
+  "dateModified": "2020-09-10T10:09:28+01:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Richard Davey"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Algorist",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Ever since a week before lockdown in mid-March, I’ve been holed up in my conservatory working from home. The wild swings in temperature have provided ample motivation to build a temperature probe and live dashboard to track patterns, open windows in good time or cope with the lead time that my pitiful electric heater requires."
+}
+</script>
+
+  
+
+  
 
 
   
@@ -328,7 +374,7 @@
 
 
 
-  <title>Posts | Algorist</title>
+  <title>Configuring resilient programs with systemd | Algorist</title>
 
 </head>
 
@@ -593,452 +639,33 @@
 
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
+  <article class="article">
 
   
 
+
+
+
+
+
+
+
+
+
+
+
+  
+
   
   
+  
+<div class="article-container pt-3">
+  <h1>Configuring resilient programs with systemd</h1>
+
+  
+
   
     
-  
-<div class="universal-wrapper pt-3">
-  <h1>Posts</h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-
-  
-
-  
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/latin-hypercube-sampling/" >Latin Hypercube Sampling</a>
-    </h3>
-
-    
-    <a href="/post/latin-hypercube-sampling/" class="summary-link">
-      <div class="article-style">
-        What is LHS? Latin hypercube sampling aims to bring the best of both worlds: the unbiased random sampling of monte carlo simulation; and the even coverage of a grid search over the decision space.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Last updated on
-      
-    
-    2020-12-18
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    5 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/guide/">Guide</a></span>
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/organising-projects/" >Organising an analytical project</a>
-    </h3>
-
-    
-    <a href="/post/organising-projects/" class="summary-link">
-      <div class="article-style">
-        I almost didn’t write this post because the topic of file organisation is incredibly boring for most people. What did drive me to write was a few horrendous project collaborations where the end result was a soup of files where much time was wasted deciphering what file was in use and where it came from.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Last updated on
-      
-    
-    2020-10-16
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    2 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/blog/">Blog</a></span>
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/location-heatmaps-in-r/" >Location heatmaps in R</a>
-    </h3>
-
-    
-    <a href="/post/location-heatmaps-in-r/" class="summary-link">
-      <div class="article-style">
-        Location heatmaps in R Let’s use a built-in example within R: location of earthquakes off the island of Fiji.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Last updated on
-      
-    
-    2020-10-09
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    28 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/guide/">Guide</a></span>
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/reporting-with-rmarkdown/" >Reporting with Rmarkdown</a>
-    </h3>
-
-    
-    <a href="/post/reporting-with-rmarkdown/" class="summary-link">
-      <div class="article-style">
-        Rmarkdown was a revelation to me when I was first introduced to it in SEAMS (now Arcadis Gen). I’d used Jupyter notebooks before for Python and loved the live lab notebook feel of them.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Last updated on
-      
-    
-    2020-09-21
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    4 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/guide/">Guide</a></span>
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/resilient-systemd/" >Configuring resilient programs with systemd</a>
-    </h3>
-
-    
-    <a href="/post/resilient-systemd/" class="summary-link">
-      <div class="article-style">
-        Ever since a week before lockdown in mid-March, I’ve been holed up in my conservatory working from home. The wild swings in temperature have provided ample motivation to build a temperature probe and live dashboard to track patterns, open windows in good time or cope with the lead time that my pitiful electric heater requires.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
 
 
 <div class="article-metadata">
@@ -1080,503 +707,276 @@
 
 </div>
 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
       
+
+
+<p>Ever since a week before lockdown in mid-March, I’ve been holed up in my conservatory working from home. The wild swings in temperature have provided ample motivation to build a temperature probe and live dashboard to track patterns, open windows in good time or cope with the lead time that my pitiful electric heater requires.</p>
+<div class="figure">
+<img src="../../img/temp_probe.JPG" alt="" />
+<p class="caption"><em>(Probably needs an enclosure)</em></p>
+</div>
+<p>I will post a full write up of the hardware and software in due course, but in summary it involves a Raspberry Pi zero with a 1-wire temperature device, a Python script, SQLite database, Adafruit IO API for the dashboard and DarkSky API for local weather. To enable the script on boot I ran <code>crontab -e</code> to edit cron, with the following line to enable the Python script to run on boot.</p>
+<pre class="shell"><code>@reboot sleep 30 &amp;&amp; /usr/bin/python3 /home/pi/python/temperature_dashboard/temp_dashboard.py &amp;</code></pre>
+<p>At the same time I began reading Antifragile by Nassim Taleb and I was seeing the fragility of systems everywhere. It was through this lens I saw my script kept crashing for some reason: it was a fragile process. How could I make it more resilient, if not antifragile?</p>
+<p>With some testing I found that the weak point in the service was the connection to the two web APIs. Since I poll them once every two minutes, if one refused to connect at any point the whole script would halt. So I added in <code>try:</code> and <code>except:</code> handling of connection errors into functions used to get local weather or post current temperature data. Example below:</p>
+<pre class="python"><code># Make sending IO feeds into a function with error handling
+def send_all():
+   global status
+   try:
+       aio.send(reg_temp_feed.key, read_temp())
+       aio.send(current_temp_feed.key, read_temp())
+       aio.send(current_weather_feed.key, weather[&#39;temperature&#39;])
+       aio.send(max_temp_feed.key, max_temp)
+       aio.send(min_temp_feed.key, min_temp)
+       aio.send(status_feed.key, status)
+       status = 1
+       print(&quot;Adafruit connection OK&quot;)
+   except:
+       print(&quot;Adafruit connection down&quot;)
+       sleep(10)
+       status = 0
+       return</code></pre>
+<p>Now the temperature dashboard is much more resilient, but for some reason it still crashes now and again. That’s when I stumbled on a great article called “Run your Raspberry Pi code automatically” from issue 34 of <a href="https://hackspace.raspberrypi.org/issues/34">Hackspace magazine</a>. I dispensed with cron and began working with systemd.</p>
+<div id="systemd" class="section level2">
+<h2>Systemd</h2>
+<p>Cron is a simple scheduler, no more no less. The benefit of systemd over cron is that once you start a service, systemd will monitor it and will attempt to restart the service if it crashes for some reason. Obviously, this not an excuse to write shoddy code, but it represents an extra line of defence for any program where uptime mustn’t be compromised (live dashboards, for instance).</p>
+<p>With either cron or systemd the python program must have <code>#!/usr/bin/python3</code> at the top and be executable.</p>
+<pre class="shell"><code>chmod a+x /home/pi/python/temperature_dashboard/temp_dashboard.py</code></pre>
+<p>In order to create a service that systemd can run you need to create a service file. Mine is below, saved to a file called temperature.service.</p>
+<pre class="shell"><code>[Unit]
+Description=Launcher service for a temperature dashboard
+After=systemd-user-sessions.service
+
+[Service]
+Type=simple
+ExecStart=/home/pi/python/temperature_dashboard/temp_dashboard.py
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+<p>Next you need to copy to the correct folder.</p>
+<pre><code>sudo cp /home/pi/python/temperature_dashboard/temperature.service /etc/systemd/system</code></pre>
+<p>Done! Almost.</p>
+</div>
+<div id="start-stop-run-on-boot" class="section level2">
+<h2>Start, stop, run on boot</h2>
+<p>You can start the service with <code>sudo systemctl start temperature.service</code>.</p>
+<p>You can also see its status with <code>systemctl status temperature.service</code>.</p>
+<p><img src="../../img/systemctl_status.PNG" /></p>
+<p>And stop it with <code>systemctl stop temperature.service</code>.</p>
+<p>However, what I really want is to launch the service every time the computer boots up. To do this I run.</p>
+<pre><code>sudo systemctl enable temperature.service</code></pre>
+<p>The corollary is to type the following to stop the service from starting automatically at boot.</p>
+<pre><code>sudo systemctl disable temperature.service</code></pre>
+</div>
+<div id="resilient-code" class="section level2">
+<h2>Resilient code</h2>
+<p>The final result is a python program with error handling, launched as a service that systemd will attempt to relaunch if it crashes. With two lines of defence against connection errors (or any other error), my dashboard should have considerably more uptime. Now to begin work on an IoT controller for the heater before winter…</p>
+</div>
+
     </div>
 
     
 
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/linux/">Linux</a>
+  
+  <a class="badge badge-light" href="/tag/python/">Python</a>
+  
 </div>
 
-    
-  
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
     
       
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/fork-the-algorithm/" >Fork the algorithm</a>
-    </h3>
-
-    
-    <a href="/post/fork-the-algorithm/" class="summary-link">
-      <div class="article-style">
-        Watching scenes like these makes me feel like I’m already living in a dystopian future.
-This is amazing. The future is here.
-‘Fuck the algorithm’
-pic.twitter.com/k4Vny0L4tF
-&mdash; Carole Cadwalladr (@carolecadwalla) August 17, 2020  The protests are of course in response to the UK Education Secretary Gavin Williamson’s decision to use an algorithm to determine A-level and GCSE grades for students this year.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/resilient-systemd/&amp;text=Configuring%20resilient%20programs%20with%20systemd" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
     
       
-          Last updated on
       
-    
-    2020-09-08
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/blog/">Blog</a></span>
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/heave-ho-git/" >Heave Ho! The cadence of Git</a>
-    </h3>
-
-    
-    <a href="/post/heave-ho-git/" class="summary-link">
-      <div class="article-style">
-        I’ve been working with git for quite a while now. I’ve been happily working with git for almost as long. After some in-person training and referring to Happy Git for R, things finally clicked when I found a rhythm to all these strange commands.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/resilient-systemd/&amp;t=Configuring%20resilient%20programs%20with%20systemd" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
     
       
-          Last updated on
       
-    
-    2020-09-08
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    4 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/blog/">Blog</a></span>
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/complexity-analytics/" >Making the complex uncomplicated</a>
-    </h3>
-
-    
-    <a href="/post/complexity-analytics/" class="summary-link">
-      <div class="article-style">
-        This post is a draft of an article I wrote on the arcadisgen.com website…
-Utilities companies such as water, electricity and gas networks operate in complex environments. In my time with Arcadis Gen I’ve seen diverse reactions from clients in the face of such complexity:
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Configuring%20resilient%20programs%20with%20systemd&amp;body=/post/resilient-systemd/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
     
       
-    
-    2020-08-20
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    4 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/blog/">Blog</a></span>
-  
-
-</div>
-
       
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/how-to-run-r-using-docker-on-raspberry-pi/" >How to run R using Docker on Raspberry Pi</a>
-    </h3>
-
-    
-    <a href="/post/how-to-run-r-using-docker-on-raspberry-pi/" class="summary-link">
-      <div class="article-style">
-        When I began learning about how to use Docker I stumbled on an excellent project called Rocker. For anyone with an x86 machine these Rocker images allow them to run R and most of its dependencies in a containerised environment.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/resilient-systemd/&amp;title=Configuring%20resilient%20programs%20with%20systemd" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
     
       
-          Last updated on
       
-    
-    2020-08-13
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    4 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/guide/">Guide</a></span>
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/how-to-write-api-packages-for-r/" >How to write API packages for R</a>
-    </h3>
-
-    
-    <a href="/post/how-to-write-api-packages-for-r/" class="summary-link">
-      <div class="article-style">
-        Overview  Installation DVLA is not yet on CRAN. To install, simply run the following in R.
-devtools::install_github(&quot;daveyr/DVLA&quot;)  Usage Documentation on functions and examples can be found on its Github page.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Configuring%20resilient%20programs%20with%20systemd%20/post/resilient-systemd/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
     
       
-          Last updated on
       
-    
-    2020-08-17
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/guide/">Guide</a>, <a href="/category/r-package/">R package</a></span>
-  
-
-</div>
-
       
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    
-    <li class="page-item"><a class="page-link" href="/post/page/2/">&raquo;</a></li>
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/resilient-systemd/&amp;title=Configuring%20resilient%20programs%20with%20systemd" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
     
   </ul>
-</nav>
-
-
-
 </div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="/"><img class="avatar mr-3 avatar-circle" src="/author/richard-davey/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_270x270_fill_q90_lanczos_center.jpg" alt="Richard Davey"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Richard Davey</a></h5>
+      <h6 class="card-subtitle">Analytical Consultant</h6>
+      <p class="card-text">My interests include earth science, numerical modelling and problem solving through optimisation.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/latin-hypercube-sampling/">Latin Hypercube Sampling</a></li>
+      
+      <li><a href="/post/location-heatmaps-in-r/">Location heatmaps in R</a></li>
+      
+      <li><a href="/post/reporting-with-rmarkdown/">Reporting with Rmarkdown</a></li>
+      
+      <li><a href="/post/how-to-run-r-using-docker-on-raspberry-pi/">How to run R using Docker on Raspberry Pi</a></li>
+      
+      <li><a href="/post/how-to-write-api-packages-for-r/">How to write API packages for R</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
 
       
 
